@@ -1,0 +1,223 @@
+/* Styles généraux */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.presence-container {
+  background-color: #1a1a2e; /* Bleu foncé pour le fond */
+  color: #fff;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  font-size: 2rem;
+  color: #4b79a1; /* Bleu clair pour le titre */
+  margin-bottom: 30px;
+}
+
+/* Titre principal */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #4b79a1;
+  margin-bottom: 20px;
+}
+
+/* Sélection de la date et bouton */
+.date-selection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.date-input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 15px;
+  border-radius: 4px;
+  border: 2px solid #4b79a1;
+  background-color: #2a3b6b; /* Bleu plus foncé pour l'input */
+  color: #fff;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4b79a1;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3a5c8a; /* Teinte plus sombre au survol */
+}
+
+/* Message d'erreur */
+.error-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Table des présences */
+.presence-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  transition: transform 0.3s ease; /* Transition douce pour le tableau */
+}
+
+.presence-table th, .presence-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.presence-table th {
+  background-color: #2a3b6b; /* Bleu foncé pour l'en-tête */
+  color: #fff;
+  text-transform: uppercase; /* Capitalisation des titres de colonnes */
+}
+
+.presence-table td {
+  background-color: #3e4a75; /* Bleu légèrement plus clair */
+  color: #fff;
+  border-radius: 4px;
+}
+
+.presence-table tr:nth-child(even) {
+  background-color: #2a3b6b; /* Alternance des lignes */
+}
+
+.presence-table tr:hover {
+  background-color: #1d2742; /* Teinte foncée au survol */
+  transform: scale(1.02); /* Effet de zoom au survol */
+}
+
+.presence-table th, .presence-table td {
+  border-radius: 4px;
+}
+
+/* Conteneur avec défilement vertical dans la table */
+.table-container {
+  max-height: 20px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère autour du tableau */
+}
+
+.presence-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.presence-table th, .presence-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.presence-table th {
+  background-color: #2a3b6b;
+  color: #fff;
+}
+
+/* Message quand aucune présence n'est trouvée */
+.no-presences {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+/* Bouton Retour avec effet néon */
+.back {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #4b79a1;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.back:hover {
+  color: #4b79a1;
+  border-color: #4b79a1;
+  box-shadow: 0 0 10px #4b79a1, 0 0 20px #4b79a1, 0 0 30px #4b79a1; /* Effet néon */
+}
+
+.neon-secondary {
+  color: #4b79a1; /* Couleur du texte en bleu clair */
+  text-shadow: 0 0 10px #4b79a1, 0 0 20px #4b79a1, 0 0 30px #4b79a1; /* Effet néon */
+}
+
+.back:active {
+  transform: translateY(2px);
+}
+/* Conteneur avec défilement vertical dans la table */
+.table-container {
+  max-height: 170px; /* Limite la hauteur du conteneur, ajuste selon ton besoin */
+  overflow-y: scroll; /* Permet un défilement vertical */
+  border: 1px solid #ccc; /* Bordure pour délimiter le conteneur */
+  margin-top: 20px;
+  padding-right: 15px; /* Ajout d'un espace pour éviter que la barre de défilement empiète sur le tableau */
+}
+
+/* Table des présences */
+.presence-table {
+  max-height: 100px;
+  width: 100%;
+  border-collapse: collapse;
+  /*table-layout: fixed;  Assure une largeur uniforme des colonnes */
+}
+
+.presence-table th, .presence-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd; /* Ajout d'une bordure pour les cellules */
+}
+
+.presence-table th {
+  background-color: #2a3b6b;
+  color: #fff;
+}
+
+.presence-table td {
+  background-color: #3e4a75; /* Bleu légèrement plus clair */
+  color: #fff;
+}
+
+/* Altérer le style des lignes pour la lisibilité */
+.presence-table tr:nth-child(even) {
+  background-color: #2a3b6b;
+}
+
+/* Effet de survol */
+.presence-table tr:hover {
+  background-color: #1d2742; /* Teinte foncée au survol */
+}

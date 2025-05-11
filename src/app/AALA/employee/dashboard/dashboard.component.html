@@ -1,0 +1,15 @@
+
+<h1>Bienvenue, {{ employe?.f_name }} {{ employe?.l_name }}</h1>
+
+<div *ngIf="employe?.code_verification">
+  <p>Ton code de vérification est : <strong>{{ employe.code_verification }}</strong></p>
+</div>
+<div *ngIf="codeDeVerificationDisponible" class="alert alert-warning">
+    🚨 Vérification de présence requise ! .
+  </div>
+  
+
+<!-- si jamais le champ est vide -->
+<div *ngIf="!employe?.code_verification">
+  <p>Pas de code de vérification disponible pour l’instant.</p>
+</div>

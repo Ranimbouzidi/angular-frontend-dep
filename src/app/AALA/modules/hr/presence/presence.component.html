@@ -1,0 +1,37 @@
+<a class="back neon-secondary" routerLink="/hr" href="/hr">← Retour</a>
+<div class="presence-container">
+  <h2>Consultation des Présences</h2>
+
+  <div class="date-selection">
+    <label for="date">Choisir une date :</label>
+    <input type="date" [(ngModel)]="selectedDate" name="date" class="date-input" />
+    <button (click)="fetchPresences()" class="btn">Afficher</button>
+  </div>
+
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="presences.length === 0" class="no-presences">Aucune présence trouvée pour cette date.</div>
+
+  <div class="table-container">
+    <table *ngIf="presences.length > 0" class="presence-table">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Date</th>
+          <th>Heure d'arrivée</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of presences">
+          <td>{{ p.nom }}</td>
+          <td>{{ p.prenom }}</td>
+          <td>{{ p.date }}</td>
+          <td>{{ p.heureArrivee }}</td>
+          <td>{{ p.statut }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

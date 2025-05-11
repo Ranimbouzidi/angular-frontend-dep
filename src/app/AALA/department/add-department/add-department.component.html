@@ -1,0 +1,32 @@
+
+<div class="container">
+    <a class="back" href="/hr">← Back</a>
+    <h2>Department Management</h2>
+  
+   <!-- Form to create a new department -->
+   <div class="form-group">
+    <label for="name">Department Name</label>
+    <input [(ngModel)]="newDepartmentName" placeholder="Department name" />
+    <button class="create" (click)="createDepartment()">Create</button>
+  </div>
+
+  <div class="form-group">
+    <label for="department">Select Department to Edit/Delete</label>
+    <select [(ngModel)]="departmentId">
+      <option *ngFor="let dept of departments" [value]="dept.id">
+        {{ dept.name }}
+      </option>
+    </select>
+  </div>
+   <!-- Form to update the department name -->
+   <div class="form-group">
+    <label for="updatedName">New Department Name</label>
+    <input [(ngModel)]="updatedName" placeholder="Enter new name" />
+  </div>
+
+
+  <div class="actions">
+    <button class="edit" (click)="editDepartment()">Edit</button>
+    <button class="delete" (click)="deleteDepartment()">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+  background-size: 400% 400%;
+  animation: backgroundFlow 20s ease infinite;
+}
+
+.employee-container {
+  padding: 60px 30px;
+  min-height: 100vh;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes backgroundFlow {
+  0% {
+    background-position: 0% 50%;
+    background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  }
+  50% {
+    background-position: 100% 50%;
+    background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+  }
+  100% {
+    background-position: 0% 50%;
+    background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  }
+}
+
+/* Particules flottantes */
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(79, 195, 247, 0.6);
+  border-radius: 50%;
+  animation: floatParticles 30s infinite linear;
+}
+
+@keyframes floatParticles {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-800px) translateX(200px) rotate(360deg);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Cartes animées */
+.employee-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-left: 6px solid #4fc3f7;
+  margin: 20px 0;
+  padding: 35px;
+  max-width: 650px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+  transform: perspective(1000px) rotateY(10deg);
+}
+
+.employee-card:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Titres */
+.employee-container h2 {
+  font-size: 3.5em;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1a237e;
+}
+
+/* Champs de recherche */
+.search-bar {
+  width: 65%;
+  padding: 14px 22px;
+  margin: 20px auto 50px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1.15em;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  background: #fafafa;
+}
+
+/* Résultats */
+.search-result {
+  background: #ffffff;
+  border-left: 6px solid #1976d2;
+  margin-bottom: 30px;
+  padding: 30px;
+  max-width: 650px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Bouton retour */
+.back {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1.2rem;
+  color: #333;
+}

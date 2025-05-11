@@ -1,0 +1,25 @@
+<!--
+<h2>Vérification de présence</h2>
+
+<div class="container">
+  <p><strong>Code de vérification :</strong> {{ employee?.codeVerification }}</p>
+  <p>{{ employee?.fName }} {{ employee?.lName }}</p>
+  
+  <label for="code">Entrez votre code :</label>
+  <input [(ngModel)]="code" id="code" />
+  <button (click)="valider()">Valider</button>
+</div>
+-->
+<div class="background"></div>
+
+<div class="card-3d">
+  <h2>🚀 Vérification de présence</h2>
+
+  <p><strong>Code de vérification :</strong> <span class="glow">{{ employee?.codeVerification }}</span></p>
+  <p>{{ employee?.fName }} {{ employee?.lName }}</p>
+
+  <label for="code">Entrez votre code :</label>
+  <input [(ngModel)]="code" id="code" class="code-input" />
+
+  <button (click)="valider()" class="btn-3d">🚀 Valider</button>
+</div>

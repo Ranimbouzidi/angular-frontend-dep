@@ -1,0 +1,122 @@
+/* Style global pour le corps de la page */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0; /* Fond clair */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Conteneur principal */
+.container {
+  background-color: #ffffff; /* Fond blanc */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  max-width: 800px;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.02); /* Effet d'agrandissement léger au survol */
+}
+
+/* Titre de la section */
+h2 {
+  font-size: 2em;
+  color: #2c3e50; /* Couleur gris foncé */
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Lien retour */
+a.back {
+  color: #2980b9; /* Bleu clair */
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+a.back:hover {
+  color: #34495e; /* Bleu foncé au survol */
+}
+
+/* Formulaire pour l'entrée de données */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.1em;
+  color: #34495e; /* Gris foncé */
+  margin-bottom: 5px;
+  display: block;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #2980b9; /* Bordure bleu clair au focus */
+  outline: none;
+}
+
+/* Style des boutons */
+button {
+  background-color: #2980b9; /* Bleu clair */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #1c598a; /* Bleu foncé au survol */
+  transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+button:active {
+  transform: translateY(0); /* Retour à l'état normal au clic */
+}
+
+/* Actions de l'interface */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actions button {
+  width: 48%;
+  padding: 12px 0;
+  font-size: 1.1em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.05);
+  background-color: #1c598a;
+}

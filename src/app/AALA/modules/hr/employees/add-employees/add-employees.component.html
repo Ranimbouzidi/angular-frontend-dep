@@ -1,0 +1,61 @@
+
+    <div class="background-animated"></div>
+    <div class="stars"></div>
+
+<div class="form-container glass">
+  <a class="back neon-secondary" routerLink="/hr" href="/hr">← Retour</a>
+
+  <h2 class="title glitch" data-text="➕ Ajouter un Employé">➕ Ajouter un Employé</h2>
+
+  <form class="employee-form" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="input-group">
+        <label for="firstName">🧍 Prénom</label>
+        <input id="firstName" type="text" formControlName="fName" placeholder="Entrez le prénom" />
+      </div>
+
+      <div class="input-group">
+        <label for="lastName">👤 Nom</label>
+        <input id="lastName" type="text" formControlName="lName"  placeholder="Entrez le nom" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group">
+        <label for="email">📧 Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="exemple@domaine.com" />
+      </div>
+
+      <div class="input-group">
+        <label for="department">💼 Département</label>
+        <select id="idDep" formControlName="idDep">
+          <option *ngFor="let dept of departments" [value]="dept.id">
+            {{ dept.name }}
+          </option>
+        </select>
+      </div>
+
+
+    </div>
+
+    <div class="row">
+      <div class="input-group">
+        <label for="role">📁 Rôle</label>
+        <input id="role" type="text" formControlName="role" placeholder="Entrez le rôle" />
+      </div>
+
+      <div class="input-group">
+        <label for="salary">💵 Salaire</label>
+        <input id="salary" type="number" formControlName="salary" placeholder="Montant en DT" />
+      </div>
+    </div>
+
+    
+
+    <div class="buttons-group">
+      <button class="btn neon-secondary" (click)="onUpdate()" type="submit" >✅ Ajouter l’employé</button>
+      <button class="btn neon-secondary" (click)="onUpdate()" type="button">✏️ Modifier</button>
+      <button class="btn neon-secondary" (click)="onDelete()" type="button">🗑️ Supprimer</button>
+    </div>
+  </form>
+</div>

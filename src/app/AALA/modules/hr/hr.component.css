@@ -1,0 +1,474 @@
+/*
+
+
+
+  
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: black;
+    overflow-x: hidden;
+    position: relative;
+    color: #fff;
+  }
+  
+  
+  .background-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #1f0036 0%, #000000 100%);
+    animation: pulseBg 10s infinite alternate;
+  }
+  
+  @keyframes pulseBg {
+    0% {
+      background: radial-gradient(circle, #1f0036 0%, #000000 100%);
+    }
+    100% {
+      background: radial-gradient(circle, #000000 0%, #1f0036 100%);
+    }
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 40px 0;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  }
+  
+  .glitch {
+    display: flex;
+    
+    position: relative;
+    color: #0ff;
+  }
+  .glitch::before,
+  .glitch::after {
+    
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+  text-align: center;
+    
+  }
+  .glitch::before {
+    animation: glitchTop 2s infinite linear;
+    color: magenta;
+    top: -2px;
+  }
+  .glitch::after {
+    animation: glitchBottom 2s infinite linear;
+    color: red;
+    top: 2px;
+  }
+  @keyframes glitchTop {
+    0% { left: 0px; }
+    20% { left: -3px; }
+    40% { left: 3px; }
+    60% { left: -2px; }
+    80% { left: 2px; }
+    100% { left: 0px; }
+  }
+  @keyframes glitchBottom {
+    0% { left: 0px; }
+    20% { left: 2px; }
+    40% { left: -2px; }
+    60% { left: 3px; }
+    80% { left: -3px; }
+    100% { left: 0px; }
+  }
+  
+  .sections {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 50px;
+    margin: 50px 0;
+  }
+  
+  .section {
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.5s;
+  }
+  
+  .section:hover {
+    transform: scale(1.05) rotateY(5deg);
+  }
+  
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  }
+  
+  
+  .btn {
+    margin: 10px 0;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 30px;
+    width: 90%;
+  }
+  
+  .neon {
+    background: #00ffff;
+    color: #000;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 60px #00ffff;
+  }
+  
+  .neon:hover {
+    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff, 0 0 90px #00ffff;
+    transform: scale(1.05);
+  }
+  
+  .neon-secondary {
+    background: transparent;
+    border: 2px solid #ff00ff;
+    color: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+  }
+  
+  .neon-secondary:hover {
+    background: #ff00ff;
+    color: #000;
+  }
+  
+  
+  .neon-divider {
+    width: 5px;
+    background: linear-gradient(to bottom, #0ff, #f0f, #0ff);
+    border-radius: 10px;
+    animation: flicker 2s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+  }
+  
+  .nav-links {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.2rem;
+  }
+  .nav-links a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #0ff;
+    transition: 0.3s;
+  }
+  .nav-links a:hover {
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+
+  
+  
+
+
+ 
+  
+  @keyframes glitchColor {
+    0% { filter: hue-rotate(0deg) blur(0px); }
+    50% { filter: hue-rotate(180deg) blur(1px); }
+    100% { filter: hue-rotate(360deg) blur(0px); }
+  }
+  .neon, .neon-secondary {
+    animation: neonPulse 2.5s infinite ease-in-out;
+  }
+  
+  @keyframes neonPulse {
+    0%, 100% {
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    }
+    50% {
+      box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff;
+    }
+  }
+  .section h2 {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff;
+  }
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: moveStars 100s linear infinite;
+    z-index: -9;
+    opacity: 0.3;
+  }
+  
+  @keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+  }
+  .section {
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .glitch-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+  }
+  */
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: white;
+    overflow-x: hidden;
+    position: relative;
+    color: #000; /* Texte principal en noir sur fond blanc */
+  }
+  
+  .background-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #ffffff 0%, #e6e6e6 100%);
+    animation: pulseBg 10s infinite alternate;
+  }
+  
+  @keyframes pulseBg {
+    0% {
+      background: radial-gradient(circle, #ffffff 0%, #e6e6e6 100%);
+    }
+    100% {
+      background: radial-gradient(circle, #e6e6e6 0%, #ffffff 100%);
+    }
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 40px 0;
+    color: #00f; /* Bleu très fort */
+    text-shadow: 0 0 15px #00f, 0 0 30px #00f, 0 0 45px #00f;
+  }
+  
+  .glitch {
+    display: flex;
+    position: relative;
+    color: #00f;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .glitch::before {
+    animation: glitchTop 2s infinite linear;
+    color: #494b8f;
+    top: -2px;
+  }
+  .glitch::after {
+    animation: glitchBottom 2s infinite linear;
+    color: rgb(6, 135, 247);
+    top: 2px;
+  }
+  
+  @keyframes glitchTop {
+    0% { left: 0px; }
+    20% { left: -3px; }
+    40% { left: 3px; }
+    60% { left: -2px; }
+    80% { left: 2px; }
+    100% { left: 0px; }
+  }
+  
+  @keyframes glitchBottom {
+    0% { left: 0px; }
+    20% { left: 2px; }
+    40% { left: -2px; }
+    60% { left: 3px; }
+    80% { left: -3px; }
+    100% { left: 0px; }
+  }
+  
+  .sections {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 50px;
+    margin: 50px 0;
+  }
+  
+  .section {
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.5s;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgb(39, 39, 114);
+    box-shadow: 0 0 20px rgb(39, 39, 114);
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  .section:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 0 30px rgb(60, 60, 173), 0 0 50px rgb(56, 56, 165);
+  }
+  
+  .btn {
+    margin: 10px 0;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 30px;
+    width: 90%;
+  }
+  
+  .neon {
+    background: rgb(16, 16, 127);
+    color: #fff;
+    box-shadow: 0 0 20px #4b79a1, 0 0 40px #4b79a1, 0 0 80px #4b79a1;
+  }
+  
+  .neon:hover {
+    box-shadow: 0 0 30px #4b79a1, 0 0 60px #4b79a1, 0 0 90px #4b79a1;
+    transform: scale(1.05);
+  }
+  
+  .neon-secondary {
+    background: transparent;
+    border: 2px solid #4f484f;
+    color: #4f484f;
+    box-shadow: 0 0 15px #4f484f;
+  }
+  
+  .neon-secondary:hover {
+    background: #4f484f;
+    color: #000;
+  }
+  
+  .neon-divider {
+    width: 5px;
+    background: linear-gradient(to bottom, #4b79a1, #009dff, #00f);
+    border-radius: 10px;
+    animation: flicker 2s infinite alternate;
+  }
+  
+  @keyframes flicker {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+  }
+  
+  .nav-links {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #4b79a1;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    text-shadow: 0 0 10px #4b79a1, 0 0 20px #4b79a1;
+  }
+  
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    animation: moveStars 100s linear infinite;
+    z-index: -9;
+    opacity: 0.2;
+  }
+  
+  @keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .glitch-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes neonPulse {
+    0%, 100% {
+      box-shadow: 0 0 15px #4b79a1, 0 0 30px #4b79a1;
+    }
+    50% {
+      box-shadow: 0 0 25px #4b79a1, 0 0 50px #4b79a1;
+    }
+  }
+  
+  .neon, .neon-secondary {
+    animation: neonPulse 2.5s infinite ease-in-out;
+  }
+  
+  .section h2 {
+    text-shadow:
+      0 0 5px #4b79a1,
+      0 0 10px #4b79a1,
+      0 0 20px #4b79a1,
+      0 0 40px #4b79a1;
+  }
+  

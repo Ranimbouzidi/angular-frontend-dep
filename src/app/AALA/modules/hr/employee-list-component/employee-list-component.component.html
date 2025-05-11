@@ -1,0 +1,52 @@
+
+ 
+ <div class="employee-container">
+   <a class="back" href="/hr">← Back</a>
+    <h2>👨‍💼 Liste des Employés</h2>
+   
+    <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="onSearch()"
+    placeholder="🔎 Rechercher par nom et prénom..."
+    class="search-bar"
+  />
+  
+  <div *ngIf="filteredEmployee" class="search-result">
+    <h3>{{ filteredEmployee.fName }} {{ filteredEmployee.lName }}</h3>
+    <p><strong>Email :</strong> {{ filteredEmployee.email }}</p>
+    <p><strong>Department :</strong> {{ getDepartmentName(filteredEmployee.idDep) }}</p>
+    <p><strong>Poste :</strong> {{ filteredEmployee.role }}</p>
+    <p><strong>Salaire :</strong> {{ filteredEmployee.salary }} TND</p>
+  </div>
+
+
+
+
+  <div class="particle" style="top:10%; left:5%;"></div>
+  <div class="particle" style="top:50%; left:90%;"></div>
+  <div class="particle" style="top:80%; left:30%;"></div>
+
+
+
+    <div class="employee-card" *ngFor="let employee of employees">
+      <h3>{{ employee.fName }} {{ employee.lName }}</h3>
+      <p><strong>Email :</strong> {{ employee.email }}</p>
+      <p><strong>Department :</strong> {{ getDepartmentName(employee.idDep) }}</p>
+      <p><strong>Poste :</strong> {{ employee.role }}</p>
+      <p><strong>Salaire :</strong> {{ employee.salary }} TND</p>
+    </div>
+  
+  
+
+
+ 
+ 
+   <!-- Pagination Controls -->
+   <div class="pagination">
+     <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+     <span>Page {{ currentPage }} of {{ totalPages }}</span>
+     <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+   </div>
+ </div>
+ 
